@@ -507,6 +507,16 @@
   margin-top: 16px;
 }
 
+.sf-empty-state {
+  margin: 18px 0 0;
+  padding: 18px;
+  border: 1px dashed rgba(107, 31, 51, 0.32);
+  border-radius: 8px;
+  background: rgba(247, 243, 234, 0.72);
+  color: var(--sf-muted);
+  font: 650 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+
 .sf-panel {
   padding: 22px;
   background: var(--sf-white);
@@ -546,6 +556,58 @@
   min-width: 28px;
   border-radius: 8px 8px 3px 3px;
   background: linear-gradient(180deg, var(--sf-gold), var(--sf-bordeaux));
+}
+
+.sf-insights {
+  margin-top: 16px;
+}
+
+.sf-results-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.sf-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(16, 26, 47, 0.58);
+}
+
+.sf-modal[hidden] {
+  display: none;
+}
+
+.sf-modal-card {
+  width: min(520px, 100%);
+  padding: 28px;
+  border-radius: 8px;
+  background: var(--sf-white);
+  box-shadow: 0 24px 70px rgba(16, 26, 47, 0.22);
+}
+
+.sf-modal-card h2 {
+  color: var(--sf-night);
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.sf-modal-card p {
+  margin-top: 12px;
+  color: var(--sf-muted);
+  font: 400 16px/1.65 "Segoe UI", Arial, sans-serif;
+}
+
+.sf-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
 }
 
 @keyframes sfFadeUp {
@@ -603,7 +665,9 @@
   }
 
   .sf-hero-actions,
-  .sf-survey-nav {
+  .sf-survey-nav,
+  .sf-results-actions,
+  .sf-modal-actions {
     flex-direction: column;
     align-items: stretch;
   }

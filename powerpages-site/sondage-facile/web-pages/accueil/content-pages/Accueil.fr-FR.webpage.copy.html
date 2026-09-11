@@ -82,26 +82,50 @@
     <div class="sf-shell">
       <div class="sf-section-heading">
         <span class="sf-kicker sf-kicker-dark">Organisateurs</span>
-        <h2 id="sf-dashboard-title">Dashboard de suivi</h2>
-        <p>Données de démonstration isolées dans le JavaScript, prêtes à être remplacées par Dataverse.</p>
+        <h2 id="sf-dashboard-title">Résultats</h2>
+        <p>Les indicateurs ci-dessous sont calculés uniquement à partir des réponses réellement soumises dans cette application.</p>
       </div>
 
       <div class="sf-metric-grid" data-sf-dashboard-metrics></div>
+      <div class="sf-empty-state" data-sf-empty-state hidden>
+        Aucune donnée disponible. Remplissez le sondage pour commencer l'analyse.
+      </div>
 
       <div class="sf-dashboard-grid">
         <article class="sf-panel">
-          <h3>Commentaires marquants</h3>
+          <h3>Ce que le public a le plus apprécié</h3>
           <ul data-sf-comments></ul>
         </article>
         <article class="sf-panel">
-          <h3>Suggestions</h3>
+          <h3>Suggestions pour les prochains concerts</h3>
           <ul data-sf-suggestions></ul>
         </article>
         <article class="sf-panel sf-chart-panel">
-          <h3>Tendance des notes</h3>
-          <div class="sf-bars" data-sf-bars aria-label="Graphique de demonstration"></div>
+          <h3>Distribution des notes</h3>
+          <div class="sf-bars" data-sf-bars aria-label="Distribution des notes soumises"></div>
         </article>
+      </div>
+
+      <article class="sf-panel sf-insights">
+        <h3>À retenir</h3>
+        <ul data-sf-insights></ul>
+      </article>
+
+      <div class="sf-results-actions">
+        <button type="button" class="sf-btn sf-btn-primary" data-sf-answer-again>Répondre à nouveau</button>
+        <button type="button" class="sf-btn sf-btn-secondary" data-sf-open-reset>Réinitialiser les résultats</button>
       </div>
     </div>
   </section>
+
+  <div class="sf-modal" data-sf-reset-modal hidden role="dialog" aria-modal="true" aria-labelledby="sf-reset-title">
+    <div class="sf-modal-card">
+      <h2 id="sf-reset-title">Réinitialiser les résultats</h2>
+      <p>Voulez-vous vraiment supprimer toutes les réponses du sondage ? Cette action est irréversible.</p>
+      <div class="sf-modal-actions">
+        <button type="button" class="sf-btn sf-btn-secondary" data-sf-cancel-reset>Annuler</button>
+        <button type="button" class="sf-btn sf-btn-primary" data-sf-confirm-reset>Oui, réinitialiser</button>
+      </div>
+    </div>
+  </div>
 </main>
