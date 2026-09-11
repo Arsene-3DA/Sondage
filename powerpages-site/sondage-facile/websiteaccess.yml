@@ -1,0 +1,14 @@
+- adx_managecontentsnippets: false
+  adx_managesitemarkers: false
+  adx_manageweblinksets: false
+  adx_name: Autorisation d’aperçu pour le modèle vide
+  adx_previewunpublishedentities: true
+  adx_websiteaccessid: 0946502a-7ca5-48a7-9dd3-648f360a9e0c
+- adx_managecontentsnippets: true
+  adx_managesitemarkers: true
+  adx_manageweblinksets: true
+  adx_name: Autorisations administratives pour le modèle vide
+  adx_previewunpublishedentities: true
+  adx_websiteaccess_webrole:
+  - 140849d4-ae2c-423f-902c-29cbc99d1931
+  adx_websiteaccessid: 6e435ff2-db9b-4fed-bdb3-a67095bf3474
