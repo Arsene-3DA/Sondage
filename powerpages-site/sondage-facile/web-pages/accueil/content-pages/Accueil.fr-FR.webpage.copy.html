@@ -1,1 +1,107 @@
-Hello world
+<main id="sf-app" class="sf-app" data-sf-app>
+  <section class="sf-hero" aria-labelledby="sf-hero-title">
+    <div class="sf-shell sf-hero-grid">
+      <div class="sf-hero-copy">
+        <span class="sf-kicker">Lumière du Monde</span>
+        <p class="sf-subtitle">Votre voix après le concert</p>
+        <h1 id="sf-hero-title">Votre voix compte aussi après la dernière note.</h1>
+        <p class="sf-hero-text">
+          Merci d'avoir partagé ce moment musical avec la Chorale Lumière du Monde. Votre avis nous aidera à faire grandir nos prochains concerts et à offrir une expérience toujours plus belle à notre communauté.
+        </p>
+        <div class="sf-hero-actions">
+          <button type="button" class="sf-btn sf-btn-primary" data-sf-start>Donner mon avis</button>
+          <span class="sf-duration">Environ 2 minutes</span>
+        </div>
+      </div>
+
+      <aside class="sf-concert-card" aria-label="Informations du concert">
+        <div class="sf-light-mark" aria-hidden="true"></div>
+        <span class="sf-card-label">Organisateur</span>
+        <strong>Chorale Lumière du Monde</strong>
+        <span class="sf-card-label">Lieu</span>
+        <strong>Paroisse Sacré-Cœur d'Ottawa</strong>
+        <div class="sf-staff-lines" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="sf-purpose" aria-labelledby="sf-purpose-title">
+    <div class="sf-shell sf-purpose-grid">
+      <div>
+        <span class="sf-kicker sf-kicker-dark">Pourquoi ce questionnaire</span>
+        <h2 id="sf-purpose-title">Quelques impressions pour éclairer les prochains concerts.</h2>
+      </div>
+      <p>
+        Vos réponses resteront centrées sur votre expérience du concert : l'émotion musicale, le répertoire, le lieu et les pistes d'amélioration. Vous pouvez répondre sans laisser votre identité.
+      </p>
+    </div>
+  </section>
+
+  <section id="sondage" class="sf-survey-section" aria-labelledby="sf-survey-title">
+    <div class="sf-shell sf-survey-layout">
+      <div class="sf-survey-intro">
+        <span class="sf-kicker sf-kicker-dark">Sondage</span>
+        <h2 id="sf-survey-title">Partagez votre ressenti</h2>
+        <p>Une question à la fois, avec une progression claire pour une réponse rapide depuis votre téléphone.</p>
+      </div>
+
+      <form class="sf-survey-card" data-sf-survey-form>
+        <div class="sf-progress-wrap" aria-label="Progression du questionnaire">
+          <div class="sf-progress-meta">
+            <span data-sf-step-label>Question 1 sur 8</span>
+            <span data-sf-progress-percent>13%</span>
+          </div>
+          <div class="sf-progress-track"><span data-sf-progress-bar></span></div>
+        </div>
+
+        <div class="sf-question-stage" data-sf-question-stage></div>
+
+        <div class="sf-survey-nav">
+          <button type="button" class="sf-btn sf-btn-secondary" data-sf-prev>Retour</button>
+          <button type="button" class="sf-btn sf-btn-primary" data-sf-next>Continuer</button>
+          <button type="submit" class="sf-btn sf-btn-primary" data-sf-submit hidden>Envoyer mes réponses</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="sf-thank-you" data-sf-thank-you hidden aria-live="polite">
+    <div class="sf-shell">
+      <div class="sf-thank-you-card">
+        <span class="sf-music-symbol" aria-hidden="true">&#9834;</span>
+        <h2>Merci d'avoir partagé votre voix avec nous.</h2>
+        <p>Vos réponses contribueront à préparer nos prochains rendez-vous musicaux.</p>
+        <button type="button" class="sf-btn sf-btn-secondary" data-sf-reset>Modifier mes réponses</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sf-dashboard" aria-labelledby="sf-dashboard-title">
+    <div class="sf-shell">
+      <div class="sf-section-heading">
+        <span class="sf-kicker sf-kicker-dark">Organisateurs</span>
+        <h2 id="sf-dashboard-title">Dashboard de suivi</h2>
+        <p>Données de démonstration isolées dans le JavaScript, prêtes à être remplacées par Dataverse.</p>
+      </div>
+
+      <div class="sf-metric-grid" data-sf-dashboard-metrics></div>
+
+      <div class="sf-dashboard-grid">
+        <article class="sf-panel">
+          <h3>Commentaires marquants</h3>
+          <ul data-sf-comments></ul>
+        </article>
+        <article class="sf-panel">
+          <h3>Suggestions</h3>
+          <ul data-sf-suggestions></ul>
+        </article>
+        <article class="sf-panel sf-chart-panel">
+          <h3>Tendance des notes</h3>
+          <div class="sf-bars" data-sf-bars aria-label="Graphique de demonstration"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
