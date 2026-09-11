@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+.sf-app .sf-is-hidden {
+  display: none !important;
+}
+
 .sf-app h1,
 .sf-app h2,
 .sf-app h3,
@@ -577,10 +581,6 @@
   place-items: center;
   padding: 20px;
   background: rgba(16, 26, 47, 0.58);
-}
-
-.sf-modal[hidden] {
-  display: none;
 }
 
 .sf-modal-card {

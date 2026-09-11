@@ -61,13 +61,13 @@
         <div class="sf-survey-nav">
           <button type="button" class="sf-btn sf-btn-secondary" data-sf-prev>Retour</button>
           <button type="button" class="sf-btn sf-btn-primary" data-sf-next>Continuer</button>
-          <button type="submit" class="sf-btn sf-btn-primary" data-sf-submit hidden>Envoyer mes réponses</button>
+          <button type="submit" class="sf-btn sf-btn-primary sf-is-hidden" data-sf-submit>Envoyer mes réponses</button>
         </div>
       </form>
     </div>
   </section>
 
-  <section class="sf-thank-you" data-sf-thank-you hidden aria-live="polite">
+  <section class="sf-thank-you sf-is-hidden" data-sf-thank-you aria-live="polite">
     <div class="sf-shell">
       <div class="sf-thank-you-card">
         <span class="sf-music-symbol" aria-hidden="true">&#9834;</span>
@@ -87,7 +87,7 @@
       </div>
 
       <div class="sf-metric-grid" data-sf-dashboard-metrics></div>
-      <div class="sf-empty-state" data-sf-empty-state hidden>
+      <div class="sf-empty-state sf-is-hidden" data-sf-empty-state>
         Aucune donnée disponible. Remplissez le sondage pour commencer l'analyse.
       </div>
 
@@ -118,7 +118,7 @@
     </div>
   </section>
 
-  <div class="sf-modal" data-sf-reset-modal hidden role="dialog" aria-modal="true" aria-labelledby="sf-reset-title">
+  <div class="sf-modal sf-is-hidden" data-sf-reset-modal role="dialog" aria-modal="true" aria-labelledby="sf-reset-title">
     <div class="sf-modal-card">
       <h2 id="sf-reset-title">Réinitialiser les résultats</h2>
       <p>Voulez-vous vraiment supprimer toutes les réponses du sondage ? Cette action est irréversible.</p>

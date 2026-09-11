@@ -47,6 +47,12 @@
   var progressPercent = app.querySelector("[data-sf-progress-percent]");
   var dashboard = app.querySelector(".sf-dashboard");
   var resetModal = app.querySelector("[data-sf-reset-modal]");
+  var startButton = app.querySelector("[data-sf-start]");
+  var editAnswersButton = app.querySelector("[data-sf-reset]");
+  var answerAgainButton = app.querySelector("[data-sf-answer-again]");
+  var openResetButton = app.querySelector("[data-sf-open-reset]");
+  var cancelResetButton = app.querySelector("[data-sf-cancel-reset]");
+  var confirmResetButton = app.querySelector("[data-sf-confirm-reset]");
 
   function escapeHtml(value) {
     return String(value || "")
@@ -186,7 +192,7 @@
       metricTemplate("Suggestions", kpis.suggestionsCount)
     ].join("");
 
-    emptyState.hidden = kpis.total > 0;
+    toggleElement(emptyState, kpis.total === 0);
 
     comments.innerHTML = kpis.comments.length
       ? kpis.comments.map(listItemTemplate).join("")
@@ -248,9 +254,17 @@
     progressBar.style.width = progress + "%";
     stepLabel.textContent = "Question " + (currentStep + 1) + " sur " + questions.length;
     progressPercent.textContent = progress + "%";
-    prevButton.hidden = currentStep === 0;
-    nextButton.hidden = currentStep === questions.length - 1;
-    submitButton.hidden = currentStep !== questions.length - 1;
+    toggleElement(prevButton, currentStep !== 0);
+    toggleElement(nextButton, currentStep !== questions.length - 1);
+    toggleElement(submitButton, currentStep === questions.length - 1);
+  }
+
+  function toggleElement(element, shouldShow) {
+    if (!element) {
+      return;
+    }
+
+    element.classList.toggle("sf-is-hidden", !shouldShow);
   }
 
   function renderQuestionControl(question) {
@@ -306,8 +320,8 @@
     answers = {};
     currentStep = 0;
     form.reset();
-    form.hidden = false;
-    thankYou.hidden = true;
+    toggleElement(form, true);
+    toggleElement(thankYou, false);
     renderQuestion();
     document.getElementById("sondage").scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -315,11 +329,19 @@
   function resetResults() {
     localStorage.removeItem(STORAGE_KEY);
     renderDashboard();
-    resetModal.hidden = true;
+    closeResetModal();
     dashboard.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  app.querySelector("[data-sf-start]").addEventListener("click", function () {
+  function openResetModal() {
+    toggleElement(resetModal, true);
+  }
+
+  function closeResetModal() {
+    toggleElement(resetModal, false);
+  }
+
+  startButton.addEventListener("click", function () {
     document.getElementById("sondage").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
@@ -344,20 +366,21 @@
     saveCurrentAnswer();
     saveSubmission();
     renderDashboard();
-    form.hidden = true;
-    thankYou.hidden = false;
+    toggleElement(form, false);
+    toggleElement(thankYou, true);
     dashboard.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
-  app.querySelector("[data-sf-reset]").addEventListener("click", answerAgain);
-  app.querySelector("[data-sf-answer-again]").addEventListener("click", answerAgain);
-  app.querySelector("[data-sf-open-reset]").addEventListener("click", function () {
-    resetModal.hidden = false;
+  editAnswersButton.addEventListener("click", answerAgain);
+  answerAgainButton.addEventListener("click", answerAgain);
+  openResetButton.addEventListener("click", openResetModal);
+  cancelResetButton.addEventListener("click", closeResetModal);
+  confirmResetButton.addEventListener("click", resetResults);
+  resetModal.addEventListener("click", function (event) {
+    if (event.target === resetModal) {
+      closeResetModal();
+    }
   });
-  app.querySelector("[data-sf-cancel-reset]").addEventListener("click", function () {
-    resetModal.hidden = true;
-  });
-  app.querySelector("[data-sf-confirm-reset]").addEventListener("click", resetResults);
 
   renderQuestion();
   renderDashboard();
